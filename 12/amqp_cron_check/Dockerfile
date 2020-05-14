@@ -11,8 +11,6 @@ WORKDIR /trash
 
 RUN git clone https://github.com/omniti-labs/pg_amqp.git
 RUN git clone https://github.com/okbob/plpgsql_check.git
-RUN git clone https://github.com/pramsey/pgsql-http.git
-
 
 
 WORKDIR /trash/pg_amqp
@@ -23,11 +21,6 @@ WORKDIR /trash/plpgsql_check/
 RUN make clean
 RUN make install
  
-WORKDIR /trash/pgsql-http
-RUN make
-RUN make install
-
-
 WORKDIR /
 RUN rm /trash -Rf
 
